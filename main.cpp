@@ -23,6 +23,7 @@ string dayName[] = {"", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
 
 void solve(){
     int numberOfEmployees;
+    cout << "How many Employees: ";
     cin >> numberOfEmployees;
     
     priority_queue<eTime> Q;
@@ -54,7 +55,7 @@ void solve(){
                 Q.push({temp[j].id, temp[j].timeRemain - 8});
         }
     }
-
+    
     priority_queue<pair<int,int> > day;
     for(int i = 1; i <= 4; i++){
         day.push({0, i});
@@ -72,7 +73,7 @@ void solve(){
         Q.pop();
     }
     
-    printf("     7:00-11:00  11:00 - 3:00   3:00 - 7:00   8:00 - 12:00\n");
+    printf("\n\n     7:00-11:00  11:00 - 3:00   3:00 - 7:00   8:00 - 12:00\n");
     for(int i = 1; i <= 6; i++){
         cout << dayName[i] << "     ";
         for(int j = 1; j <= 4; j++){
